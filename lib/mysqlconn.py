@@ -6,7 +6,7 @@
 """
 
 import logging
-from conf.settings import DEBUG
+from conf.setting import DEBUG
 
 log = logging.getLogger(__name__)
 
