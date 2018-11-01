@@ -14,7 +14,7 @@ DEBUG = False
 RPROJECT_ROOT_PATH = os.path.dirname(os.path.dirname(__file__))
 
 # socket
-MANAGEMENT_HOST = ('192.168.200.89', 5522)
+MANAGEMENT_HOST = ('127.0.0.1', 5522)
 SOCKET_DEFAULT_TIMEOUT = 10
 SSL_KEYS = dict(
                 keyfile=os.path.join(RPROJECT_ROOT_PATH,'conf','keys', "client-key.pem"),
