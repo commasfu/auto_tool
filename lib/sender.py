@@ -11,7 +11,7 @@ import socket
 import struct
 import logging
 
-
+from conf.settings import SSL_KEYS, SOCKET_DEFAULT_TIMEOUT, MANAGEMENT_HOST
 
 log = logging.getLogger(__name__)
 
