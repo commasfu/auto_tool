@@ -6,6 +6,7 @@
 """
 import re, os
 import shlex
+import time
 import logging
 import subprocess
 import configparser
@@ -55,6 +56,20 @@ def get_config_value(file,session,key):
         log.error('%s not exist' % file)
         values = False
     return values
+
+
+def exce_function(f):
+    '''
+    return second
+    :param f:
+    :return:
+    '''
+    def new_f():
+        start_time = time.time()
+        f()
+        end_time = time.time()
+        print('%s speed  %s' %(f, round(end_time - start_time, 2)))
+    return new_f()
 
 def main():
     print(get_ip_all())
