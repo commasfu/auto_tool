@@ -58,17 +58,17 @@ def get_config_value(file,session,key):
     return values
 
 
-def exce_function(f):
+def exce_function(fun):
     '''
     return second
     :param f:
     :return:
     '''
-    def new_f():
+    def new_f(*a, **b):
         start_time = time.time()
-        f()
+        fun(*a, **b)
         end_time = time.time()
-        print('%s speed  %s' %(f, round(end_time - start_time, 2)))
+        print('%s speed  %s' %(fun, round(end_time - start_time, 2)))
     return new_f
 
 def main():
