@@ -10,7 +10,9 @@ from lib.utils import exce_function
 
 @exce_function
 def s_test():
-    time.sleep(3)
+    time.sleep(1)
     print('test....')
+
+s_test()
 
 

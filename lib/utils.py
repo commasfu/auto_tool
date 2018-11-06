@@ -69,7 +69,7 @@ def exce_function(f):
         f()
         end_time = time.time()
         print('%s speed  %s' %(f, round(end_time - start_time, 2)))
-    return new_f()
+    return new_f
 
 def main():
     print(get_ip_all())
