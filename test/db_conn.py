@@ -125,9 +125,9 @@ class MysqlConn(object):
             self.conn.close()
 
 if __name__ == "__main__":
-    conn = MysqlConn(dict(host='127.0.0.1', port=3306, user='root', password='123456' ,database='commas'))
-    #print(conn.select('select version();'))
-    print(conn.select('select * from qquser;' ,size=0))
+    conn = MysqlConn(dict(host='127.0.0.1', port=3306, user='root', password='123456', database='commas'))
+    print(conn.select('select version();'))
+    print(conn.select('select * from auth_user;', size=0))
 
 
 
