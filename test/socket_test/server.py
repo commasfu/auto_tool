@@ -17,6 +17,7 @@ class Myserver(socketserver.BaseRequestHandler):
         while True:
             ret_bytes = conn.recv(1024)
             ret_str = str(ret_bytes, encoding="utf-8")
+            print(ret_str)
             if ret_str == "q":
                 break
             conn.sendall(bytes(ret_str+"你好我好大家好", encoding="utf-8"))
