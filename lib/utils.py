@@ -58,7 +58,7 @@ def get_config_value(file,session,key):
     return values
 
 
-def exce_function(fun):
+def exce_fun_time(fun):
     '''
     return second
     :param f:

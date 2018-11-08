@@ -5,12 +5,26 @@
 
 import os
 import time
+import sys
+pro_path = os.path.dirname(sys.path[0])
+sys.path.append(pro_path)
 
+# pro_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# sys.path.append(pro_path)
 from conf.settings import *
-
 print(time.strftime('%Y-%m-%d %H:%M:%S'))
 
-
 print(RPROJECT_ROOT_PATH)
+print(pro_path)
 
-print(os.path.dirname(__file__))
+
+'''
+class foo:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+
+obj = foo('commas',18)
+print(getattr(obj,'age'))
+'''
