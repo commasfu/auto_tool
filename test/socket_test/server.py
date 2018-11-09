@@ -15,12 +15,17 @@ class Myserver(socketserver.BaseRequestHandler):
         conn = self.request
         conn.sendall(bytes("你好，我是机器人", encoding="utf-8"))
         while True:
-            ret_bytes = conn.recv(1024)
+            try:
+                ret_bytes = conn.recv(1024)
+            except Exception as e:
+                break
             ret_str = str(ret_bytes, encoding="utf-8")
             print(ret_str)
             if ret_str == "q":
                 break
-            conn.sendall(bytes(ret_str+"你好我好大家好", encoding="utf-8"))
+            inp = input(">>>")
+            #conn.sendall(bytes(ret_str+"你好我好大家好", encoding="utf-8"))
+            conn.sendall(bytes(inp, encoding="utf-8"))
 
 if __name__ == "__main__":
     server = socketserver.ThreadingTCPServer(("127.0.0.1", 8080), Myserver)
