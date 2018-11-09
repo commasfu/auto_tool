@@ -14,7 +14,7 @@ print('wating.....')
 while True:
     conn, addr = sok.accept()
     print(conn, addr)
-    #conn.send(bytes('hello', encoding='utf-8'))
+    conn.send(bytes('hello', encoding='utf-8'))
     while True:
         try:
             data = conn.recv(1024)

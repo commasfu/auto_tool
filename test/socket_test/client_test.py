@@ -10,8 +10,8 @@ import socket
 obj = socket.socket()
 
 obj.connect(('127.0.0.1', 8001))
-# data = obj.recv(1024)
-# print(str(data, encoding='utf-8'))
+data = obj.recv(1024)
+print(str(data, encoding='utf-8'))
 
 while True:
     inp = input('>>>')
