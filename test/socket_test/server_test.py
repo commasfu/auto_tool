@@ -13,8 +13,8 @@ sok.listen(3)
 print('wating.....')
 while True:
     conn, addr = sok.accept()
-    print(conn, addr)
-    conn.send(bytes('hello', encoding='utf-8'))
+    print(type(addr))
+    conn.send(bytes(str(addr), encoding='utf-8'))
     while True:
         try:
             data = conn.recv(1024)
@@ -22,7 +22,7 @@ while True:
             break
         data = str(data, encoding='utf-8')
         if data == 'bye':
-            print('=====')
+            print('waiting......next people.....')
             break
         print(data)
         inp = input(">>>")
