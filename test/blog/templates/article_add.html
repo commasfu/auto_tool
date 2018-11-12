@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="{% url 'articles:article_add' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    文章标题<input type="text" name="arttitle"><br>
+    文章摘要<input type="text" name="artdesc"><br>
+    文章图片<input type="file" name="artimage"><br>
+    文章类别<select name="artcategory">
+                {% for cat in all_category %}
+                    <option>{{ cat.name }}</option>
+                {% endfor %}
+            </select><br>
+    文章标签<input type="text" name="arttag"><br>
+    文章内容<textarea name="artcontent" cols="30" rows="10"></textarea>
+    <input type="submit" name="提交">
+</form>
+</body>
+</html>

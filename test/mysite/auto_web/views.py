@@ -4,5 +4,5 @@ from django.shortcuts import render, HttpResponse
 
 
 def t_view(request):
-
+    print(request)
     return render(request, 't_html.html')

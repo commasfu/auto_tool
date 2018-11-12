@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+        <meta charset="utf-8">
+        <link href="{% static 'css/reglogin.css' %}" rel='stylesheet' type='text/css' />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <div class="main">
+        <div class="header" >
+            <h1>注册帐号</h1>
+        </div>
+        <p></p>
+            <form method="post" action="{% url 'users:user_register' %}">
+                {% csrf_token %}
+                <ul class="left-form">
+                    <h2>创建用户:</h2>
+                    <li>
+                        <input type="text" placeholder="请输入你的用户名"  name="username"/>
+                        <a href="#" class="icon ticker"> </a>
+                        <div class="clear"> </div>
+                    </li>
+                    <li>
+                        <input type="text" placeholder="请输入你的邮箱"  name="email"/>
+                        <a href="#" class="icon ticker"> </a>
+                        <div class="clear"> </div>
+                    </li>
+                    <li>
+                        <input type="text" placeholder="请输入你的个人主页"  name="url"/>
+                        <a href="#" class="icon ticker"> </a>
+                        <div class="clear"> </div>
+                    </li>
+                    <li>
+                        <input type="password" placeholder="请输入你的密码"   name="password"/>
+                        <a href="#" class="icon into"> </a>
+                        <div class="clear"> </div>
+                    </li>
+                    <li>
+                        <input type="password" placeholder="请确认你的密码" name="password1"/>
+                        <a href="#" class="icon into"></a>
+                        <div class="clear"> </div>
+                    </li>
+                    <input type="submit" value="注册">
+                    <div class="clear"> </div>
+                </ul>
+                <div class="clear"> </div>
+
+            </form>
+    </div>
+<div>
+    {{ msg }}
+    {% for key,err in user_register_form.errors.items %}
+        {{ err }}
+    {% endfor %}
+{#    {{ user_register_form }}#}
+
+</div>
+</body>
+</html>
