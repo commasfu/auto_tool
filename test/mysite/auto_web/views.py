@@ -1,5 +1,6 @@
 from django.shortcuts import render, HttpResponse
 from auto_web import models
+from django.db import connection
 # Create your views here.
 
 
@@ -13,10 +14,10 @@ user_list = []
 def index(request):
     print(request)
     if request.method == 'POST':
-        username = request.POST.get("username", None)
+        user = request.POST.get("user", None)
         password = request.POST.get("password", None)
-        print(username, password)
-        models.UserInfo.objects.create(user=username, password=password)
+        print(user, password)
+        models.UserInfo.objects.create(user=user, password=password)
         # temp = {'username': username, 'password': password}
         # user_list.append(temp)
     user_list = models.UserInfo.objects.all()

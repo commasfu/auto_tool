@@ -7,9 +7,9 @@
 <body>
     <h1 style=".....">用户输入</h1>
     <form action="/index/" method="post">
-        <input type="text" name="username"/>
+        <input type="text" name="user"/>
         <input type="password" name="password"/>
-        <input type="submit" value="提交"/>
+        <input type="submit" value="注册"/>
     </form>
     <script str="/static/js/jquery-1.12.4.js"></script>
     <h2 style=".....">用户展示</h2>
@@ -21,7 +21,7 @@
         <tbody>
             {% for line in data %}
                 <tr>
-                    <td>{{ line.username }}</td>
+                    <td>{{ line.user }}</td>
                     <td>{{ line.password }}</td>
                 </tr>
             {% endfor %}
