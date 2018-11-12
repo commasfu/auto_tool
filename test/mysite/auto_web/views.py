@@ -22,3 +22,7 @@ def index(request):
         # user_list.append(temp)
     user_list = models.UserInfo.objects.all()
     return render(request, 'index.html',{"data": user_list})
+
+def login(request):
+
+    return render(request, 'login.html')
